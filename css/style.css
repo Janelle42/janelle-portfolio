@@ -1,0 +1,1413 @@
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+html {
+    scroll-padding-top: 100px;
+}
+
+body {
+    background:
+        linear-gradient(
+            rgba(5, 8, 6, 0.88),
+            rgba(5, 8, 6, 0.88)
+        ),
+        url("https://img.freepik.com/premium-photo/green-circuit-background_974629-28809.jpg?w=2000");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: #f5f2ff;
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 7%;
+    z-index: 1000;
+
+    background:
+        linear-gradient(
+            rgba(5, 8, 6, 0.70),
+            rgba(5, 8, 6, 0.70)
+        ),
+        url("https://static.vecteezy.com/system/resources/previews/026/190/465/large_2x/abstract-hexagonal-technology-hitech-background-neon-green-black-free-photo.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid #1f3d29;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d8ffdf;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #d8ffdf;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+
+    padding: 9px 16px;
+    border-radius: 8px;
+
+    border: 1px solid transparent;
+
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #e9faecee;
+
+    background:
+        linear-gradient(
+            rgba(40, 255, 110, 0.18),
+            rgba(40, 255, 110, 0.18)
+        ),
+        url("https://static.vecteezy.com/system/resources/previews/026/190/465/large_2x/abstract-hexagonal-technology-hitech-background-neon-green-black-free-photo.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    border-color: #39ff78;
+
+    box-shadow:
+        0 0 12px rgba(57, 255, 120, 0.25);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+    padding: 130px 7% 70px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 480px;
+
+    align-items: center;
+    gap: 25px;
+
+    overflow: hidden;
+}
+
+.hero-text {
+    width: 100%;
+    max-width: 760px;
+    min-width: 0;
+}
+
+.intro {
+    color: #9fff8c;
+    font-size: 15px;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 7vw, 95px);
+    line-height: 1.20;
+    margin-bottom: 25px;
+
+    white-space: nowrap;
+
+    background: linear-gradient(90deg, #1d8d19, #50e450);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero h2 {
+    color: #c9c3d9;
+    font-size: 22px;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.hero-description {
+    color: #9993a8;
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 550px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+
+/* =========================
+   ALL BUTTONS
+========================= */
+
+.button {
+    display: inline-block;
+
+    padding: 13px 24px;
+
+    border: 1px solid #39ff78;
+    border-radius: 10px;
+
+    color: #d8ffdf;
+    text-decoration: none;
+
+    background: rgba(5, 8, 6, 0.75);
+
+    box-shadow:
+        0 0 12px rgba(57, 255, 120, 0.08);
+
+    transition: 0.3s ease;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.button:hover {
+    color: #e9faecee;
+
+    background:
+        linear-gradient(
+            rgba(5, 8, 6, 0.20),
+            rgba(5, 8, 6, 0.20)
+        ),
+        url("https://static.vecteezy.com/system/resources/previews/026/190/465/large_2x/abstract-hexagonal-technology-hitech-background-neon-green-black-free-photo.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    border-color: #39ff78;
+
+    box-shadow:
+        0 0 15px rgba(57, 255, 120, 0.35),
+        0 8px 25px rgba(0, 0, 0, 0.35);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   HERO PROFILE PHOTO
+========================= */
+
+.hero-photo {
+    position: relative;
+    width: 480px;
+    height: 480px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    isolation: isolate;
+    cursor: pointer;
+
+    transition: transform 0.5s ease;
+}
+
+
+/* =========================
+   TECH BACKGROUND
+========================= */
+
+.hero-photo::before {
+    content: "";
+
+    position: absolute;
+
+    width: 410px;
+    height: 410px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            rgba(5, 8, 6, 0.25),
+            rgba(5, 8, 6, 0.25)
+        ),
+        url("https://static.vecteezy.com/system/resources/previews/026/190/465/large_2x/abstract-hexagonal-technology-hitech-background-neon-green-black-free-photo.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    transform: rotate(6deg);
+
+    opacity: 0.75;
+
+    z-index: -2;
+
+    box-shadow:
+        0 0 35px rgba(57, 255, 120, 0.16),
+        0 0 80px rgba(57, 255, 120, 0.08);
+
+    transition:
+        transform 0.6s ease,
+        opacity 0.5s ease,
+        box-shadow 0.6s ease;
+}
+
+
+/* =========================
+   SUBTLE TECH CORNER
+========================= */
+
+.hero-photo::after {
+    content: "";
+
+    position: absolute;
+
+    width: 425px;
+    height: 425px;
+
+    border-top: 2px solid rgba(57, 255, 120, 0.7);
+    border-right: 2px solid rgba(57, 255, 120, 0.25);
+
+    border-radius: 30px;
+
+    transform: rotate(-6deg);
+
+    z-index: -1;
+
+    transition:
+        transform 0.6s ease,
+        border-color 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+
+/* =========================
+   PROFILE IMAGE
+========================= */
+
+.hero-photo img {
+    width: 390px;
+    height: 390px;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 24px;
+
+    border: 1px solid rgba(57, 255, 120, 0.55);
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.45),
+        0 0 25px rgba(57, 255, 120, 0.14);
+
+    position: relative;
+    z-index: 2;
+
+    transition:
+        transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1),
+        border-color 0.4s ease,
+        box-shadow 0.5s ease;
+}
+
+
+/* =========================
+   HOVER
+========================= */
+
+.hero-photo:hover {
+    transform: translateY(-8px);
+}
+
+.hero-photo:hover::before {
+    transform: rotate(2deg) scale(1.04);
+
+    opacity: 1;
+
+    box-shadow:
+        0 0 45px rgba(57, 255, 120, 0.28),
+        0 0 100px rgba(57, 255, 120, 0.12);
+}
+
+.hero-photo:hover::after {
+    transform: rotate(-10deg) scale(1.03);
+
+    border-color: #39ff78;
+
+    box-shadow:
+        0 0 18px rgba(57, 255, 120, 0.20);
+}
+
+.hero-photo:hover img {
+    transform: scale(1.035);
+
+    border-color: #39ff78;
+
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.55),
+        0 0 35px rgba(57, 255, 120, 0.32),
+        0 0 75px rgba(57, 255, 120, 0.12);
+}
+
+
+/* =========================
+   MOBILE HERO
+========================= */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 130px 8% 70px;
+        gap: 20px;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: clamp(48px, 12vw, 75px);
+        white-space: normal;
+    }
+
+    .hero-description {
+        margin: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-photo {
+        width: 100%;
+        height: 450px;
+        margin-left: 0;
+    }
+
+    .hero-photo::before {
+        width: 350px;
+        height: 350px;
+    }
+
+    .hero-photo img {
+        width: 320px;
+        height: 400px;
+    }
+
+    .photo-placeholder {
+        width: 280px;
+        height: 350px;
+    }
+}
+
+
+/* =========================
+   ABOUT / MY IT MOMENT
+========================= */
+
+.about {
+    min-height: auto;
+    padding: 5px 15%;
+
+    position: relative;
+    overflow: hidden;
+
+    background: transparent;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* =========================
+   SECTION HEADINGS
+========================= */
+
+.about .section-heading,
+.curious .section-heading {
+    margin-bottom: 10px;
+}
+
+.section-label {
+    color: #90ff8c;
+    font-size: 13px;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+.section-heading h2 {
+    font-size: clamp(40px, 5vw, 70px);
+    line-height: 1;
+}
+
+
+/* =========================
+   ABOUT CONTENT
+========================= */
+
+.about-content {
+    max-width: 950px;
+}
+
+.about-content p {
+    color: #aaa7b5;
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   NATURALLY CURIOUS
+========================= */
+
+.curious {
+    min-height: auto;
+    padding: 25px 15%;
+
+    position: relative;
+    overflow: hidden;
+
+    background: transparent;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* =========================
+   CURIOUS CONTENT
+========================= */
+
+.curious-content {
+    max-width: 950px;
+}
+
+.curious-content p {
+    color: #aaa7b5;
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   THINKING PROCESS
+========================= */
+
+.thinking-process {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 30px;
+    margin-top: 40px;
+
+    width: 100%;
+}
+
+.thinking-step h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+.thinking-arrow {
+    color: #2feb1e;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   UNIVERSITY & ACHIEVEMENTS
+========================= */
+
+.university-achievements {
+    width: 100%;
+    padding: 30px 8%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+
+    background: transparent;
+}
+
+
+/* =========================
+   UNIVERSITY HEADING
+========================= */
+
+.university-heading {
+    width: 100%;
+    max-width: 600px;
+}
+
+.university-heading .section-label {
+    display: inline-block;
+    color: #39ff78;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.university-heading h2 {
+    font-size: clamp(40px, 4vw, 62px);
+    line-height: 1.05;
+
+    margin-bottom: 25px;
+
+    color: #f5f2ff;
+}
+
+.university-heading h2 span {
+    color: #39ff78;
+}
+
+.university-intro {
+    color: #aaa7b5;
+    font-size: 17px;
+    line-height: 1.7;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   UNIVERSITY DETAILS
+========================= */
+
+.university-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+}
+
+.university-details > div {
+    padding-left: 18px;
+
+    border-left: 2px solid #39ff78;
+}
+
+.detail-title {
+    display: block;
+
+    color: #39ff78;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+.university-details p {
+    color: #9993a8;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   ACHIEVEMENT CARDS
+========================= */
+
+.achievement-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+    width: 100%;
+}
+
+.achievement-card {
+    position: relative;
+    overflow: hidden;
+
+    border: 1px solid #24412d;
+    border-radius: 16px;
+
+    background: rgba(5, 8, 6, 0.78);
+
+    transition: 0.35s ease;
+}
+
+
+/* =========================
+   ACHIEVEMENT IMAGES
+========================= */
+
+.achievement-image {
+    width: 100%;
+    height: 150px;
+
+    overflow: hidden;
+
+    background: #050806;
+}
+
+.achievement-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.4s ease;
+}
+
+
+/* =========================
+   ACHIEVEMENT INFO
+========================= */
+
+.achievement-info {
+    padding: 16px 18px 18px;
+}
+
+.achievement-number {
+    display: block;
+
+    color: #39ff78;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    margin-bottom: 7px;
+}
+
+.achievement-info h3 {
+    color: #f5f2ff;
+    font-size: 17px;
+
+    margin-bottom: 7px;
+}
+
+.achievement-info p {
+    color: #9993a8;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   ACHIEVEMENT HOVER
+========================= */
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #39ff78;
+
+    box-shadow:
+        0 0 18px rgba(57, 255, 120, 0.18),
+        0 12px 30px rgba(0, 0, 0, 0.35);
+
+    background:
+        linear-gradient(
+            rgba(5, 8, 6, 0.25),
+            rgba(5, 8, 6, 0.25)
+        ),
+        url("https://static.vecteezy.com/system/resources/previews/026/190/465/large_2x/abstract-hexagonal-technology-hitech-background-neon-green-black-free-photo.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.achievement-card:hover .achievement-image img {
+    transform: scale(1.04);
+}
+
+
+/* =========================
+   THIRD / WIDE CARD
+========================= */
+
+.achievement-card-wide {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.achievement-card-wide .achievement-image {
+    height: 150px;
+    min-height: 150px;
+}
+
+.achievement-card-wide .achievement-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} 
+
+
+/* =========================
+   UNIVERSITY MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .university-achievements {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        width: 100%;
+        padding: 30px 8%;
+    }
+
+    .university-heading {
+        max-width: 100%;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .achievement-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .achievement-card-wide {
+        grid-column: auto;
+
+        display: block;
+    }
+
+    .achievement-card-wide .achievement-image {
+        height: 180px;
+    }
+
+    .university-details {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills {
+    min-height: auto;
+    padding: 15px 8% 25px;
+
+    position: relative;
+    overflow: hidden;
+
+    background: transparent;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* =========================
+   SKILLS CONTENT
+========================= */
+
+.skills .section-heading {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 35px;
+}
+
+
+/* =========================
+   SKILLS CONTAINER
+========================= */
+
+.skills-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 45px 60px;
+
+    padding: 45px 55px;
+
+    border: 1px solid rgba(144, 255, 140, 0.25);
+    border-radius: 25px;
+
+    background: rgba(14, 21, 14, 0.28);
+
+    backdrop-filter: blur(3px);
+}
+
+
+/* =========================
+   INDIVIDUAL SKILLS
+========================= */
+
+.skill {
+    width: 100%;
+}
+
+.skill-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.skill-info i {
+    color: #99ff8c;
+    font-size: 18px;
+    width: 22px;
+    text-align: center;
+}
+
+.skill-info span {
+    color: #f4fff2;
+    font-size: 16px;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 7px;
+
+    background: rgba(32, 43, 29, 0.75);
+
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill-fill {
+    height: 100%;
+
+    background: #49f526;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 12px rgba(153, 255, 140, 0.45);
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects {
+    min-height: auto;
+    padding: 35px 8% 25px;
+
+    position: relative;
+    overflow: hidden;
+
+    background: transparent;
+}
+
+.projects .section-heading {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 35px;
+}
+
+.projects-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.project-card {
+    position: relative;
+
+    padding: 28px 24px;
+
+    border: 1px solid #24412d;
+    border-radius: 16px;
+
+    background: rgba(5, 8, 6, 0.78);
+
+    display: flex;
+    flex-direction: column;
+
+    transition: 0.35s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #39ff78;
+
+    box-shadow:
+        0 0 18px rgba(57, 255, 120, 0.18),
+        0 12px 30px rgba(0, 0, 0, 0.35);
+
+    background:
+        linear-gradient(
+            rgba(5, 8, 6, 0.25),
+            rgba(5, 8, 6, 0.25)
+        ),
+        url("https://static.vecteezy.com/system/resources/previews/026/190/465/large_2x/abstract-hexagonal-technology-hitech-background-neon-green-black-free-photo.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.project-number {
+    color: #39ff78;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.project-card h3 {
+    color: #f5f2ff;
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    color: #9993a8;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 22px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: auto;
+    margin-bottom: 22px;
+}
+
+.project-tags span {
+    padding: 6px 10px;
+
+    border: 1px solid #24412d;
+    border-radius: 6px;
+
+    color: #9fff8c;
+    font-size: 11px;
+}
+
+.project-link {
+    display: inline-block;
+
+    color: #39ff78;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.project-link:hover {
+    color: #e9faecee;
+    transform: translateX(4px);
+}
+
+
+/* =========================
+   PROJECTS — RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================
+   OUTSIDE IT
+========================= */
+
+.outside {
+    min-height: auto;
+
+    padding: 40px 15% 30px;
+
+    position: relative;
+    overflow: hidden;
+
+    background: transparent;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.outside .section-heading {
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   OUTSIDE IT CONTENT
+========================= */
+
+.outside-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+    max-width: 1000px;
+}
+
+
+/* =========================
+   OUTSIDE IT CARDS
+========================= */
+
+.outside-item {
+    position: relative;
+    overflow: hidden;
+
+    padding: 35px;
+
+    border: 1px solid #273324;
+    border-radius: 20px;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    transition: 0.3s;
+}
+
+
+/* =========================
+   HOBBY PICTURES
+========================= */
+
+.outside-item:nth-child(1) {
+    background-image:
+        url("https://i.pinimg.com/1200x/e3/36/da/e336da953d4f2e80b600427b716c1c95.jpg");
+
+    background-position: center;
+}
+
+.outside-item:nth-child(2) {
+    background-image:
+        url("https://i.pinimg.com/originals/ac/70/b8/ac70b88c65e5ae54ee9400980aab9d7e.png");
+
+    background-position: center;
+}
+
+.outside-item:nth-child(3) {
+    background-image:
+        url("https://i.pinimg.com/736x/66/88/aa/6688aa3b247bbfc19d4b831eb0d16c27.jpg");
+
+    background-position: center;
+}
+
+.outside-item:nth-child(4) {
+    background-image:
+        url("https://i.pinimg.com/736x/60/17/63/6017638bcf96ac3e8e319046984f6af1.jpg");
+
+    background-position: center;
+}
+
+
+/* =========================
+   HOBBY IMAGE OVERLAY
+========================= */
+
+.outside-item::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: rgba(10, 16, 10, 0.72);
+
+    backdrop-filter: blur(3px);
+
+    z-index: 0;
+}
+
+
+/* Keep hobby text above images */
+
+.outside-item > * {
+    position: relative;
+    z-index: 1;
+}
+
+.outside-item:hover {
+    transform: translateY(-5px);
+
+    border-color: #4da84a;
+}
+
+.outside-item span {
+    display: none;
+}
+
+.outside-item h3 {
+    font-size: 25px;
+
+    margin: 15px 0;
+
+    color: #f2fff2;
+
+    text-shadow:
+        0 0 15px rgba(0, 0, 0, 0.8);
+}
+
+.outside-item p {
+    color: #c6c2d1;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    /* -------------------------
+       CURIOUS
+    ------------------------- */
+
+    .curious {
+        padding: 120px 15%;
+    }
+
+    .thinking-process {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .thinking-step:not(:last-child)::after {
+        display: none;
+    }
+
+
+    /* -------------------------
+       SKILLS
+    ------------------------- */
+
+    .skills {
+        padding: 55px 10%;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        padding: 35px 30px;
+
+        background: rgba(15, 21, 14, 0.35);
+    }
+
+
+    /* -------------------------
+       PROJECTS
+    ------------------------- */
+
+    .projects {
+        padding: 100px 10%;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* -------------------------
+       OUTSIDE IT
+    ------------------------- */
+
+    .outside {
+        padding: 40px 15% 30px;
+    }
+
+    .outside-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    min-height: auto;
+
+    padding: 40px 15%;
+
+    background:
+        linear-gradient(
+            rgba(5, 8, 6, 0.25),
+            rgba(5, 8, 6, 0.25)
+        ),
+        url("https://static.vecteezy.com/system/resources/previews/026/190/465/large_2x/abstract-hexagonal-technology-hitech-background-neon-green-black-free-photo.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.contact > * {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-content {
+    max-width: 750px;
+}
+
+.contact .section-heading {
+    margin-bottom: 20px;
+}
+
+.contact-content > p {
+    color: #efffef;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.contact-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+/* =========================
+   CONTACT BUTTONS
+========================= */
+
+.contact-link {
+    display: inline-block;
+
+    padding: 13px 24px;
+
+    border: 1px solid #39ff78;
+    border-radius: 10px;
+
+    color: #d8ffdf;
+    text-decoration: none;
+
+    background: rgba(5, 8, 6, 0.75);
+
+    box-shadow:
+        0 0 12px rgba(57, 255, 120, 0.08);
+
+    transition: 0.3s ease;
+}
+
+.contact-link:hover {
+    color: #e9faecee;
+
+    background:
+        linear-gradient(
+            rgba(5, 8, 6, 0.20),
+            rgba(5, 8, 6, 0.20)
+        ),
+        url("https://static.vecteezy.com/system/resources/previews/026/190/465/large_2x/abstract-hexagonal-technology-hitech-background-neon-green-black-free-photo.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    border-color: #39ff78;
+
+    box-shadow:
+        0 0 15px rgba(57, 255, 120, 0.35),
+        0 8px 25px rgba(0, 0, 0, 0.35);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   CONTACT MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .contact {
+        padding: 100px 10%;
+    }
+} 
